@@ -1,0 +1,10 @@
+.popup__modal{
+  width: 430px;
+  min-height: 330px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 34px 36px 37px;
+  box-sizing: border-box;
+  position: relative;
+}
+
