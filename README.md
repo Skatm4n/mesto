@@ -1,7 +1,7 @@
 # Mesto
 ## Интерактивная страничка посвященная природе России
 
-[![Mesto](https://cdn.iconscout.com/icon/premium/png-128-thumb/link-1741098-1482052.png)](https://nodesource.com/products/nsolid)
+[![Mesto](https://cdn.iconscout.com/icon/premium/png-128-thumb/link-1741098-1482052.png)](https://skatm4n.github.io/mesto/)
 
 ## Использовались
 - HTML5
