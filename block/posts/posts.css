@@ -1,4 +1,4 @@
-.posts{
+.posts {
   margin: 0 auto 66px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -6,8 +6,8 @@
   row-gap: 20px;
 }
 
-@media screen and (max-width: 960px){
-  .posts{
+@media screen and (max-width: 960px) {
+  .posts {
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     column-gap: 0;
@@ -15,7 +15,7 @@
 }
 
 @media screen and (max-width: 756px) {
-  .posts{
+  .posts {
     grid-template-columns: 1fr;
     margin: 0 auto 48px;
   }

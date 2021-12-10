@@ -1,4 +1,4 @@
-.avatar{
+.avatar {
   max-width: 528px;
   display: flex;
   flex-basis: 461px;
@@ -7,7 +7,7 @@
 }
 
 @media screen and (max-width: 756px) {
-  .avatar{
+  .avatar {
     max-width: 282px;
     flex-basis: 0;
     flex-direction: column;

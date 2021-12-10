@@ -7,7 +7,6 @@
   cursor: pointer;
   font-size: 18px;
   line-height: 1.22;
-  font-family: 'Inter';
   font-weight: 400;
   border-radius: 2px;
   margin: 0;
@@ -15,6 +14,6 @@
 }
 
 .popup__form-btn:hover{
-  opacity: 0.6;
+  opacity: 0.8;
   transition: all 1s ease;
 }

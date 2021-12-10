@@ -1,17 +1,17 @@
-.avatar__info{
-  width: 336px;
-  font-family: 'Inter';
+.avatar__info {
+  max-width: 336px;
+  width: 100%;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   position: relative;
   margin-right: 18px;
-  padding-left: 7%;
+  padding-left: 6%;
 }
 
 @media screen and (max-width: 756px) {
-  .avatar__info{
+  .avatar__info {
     margin: 26px 0 36px;
     max-width: 282px;
     align-items: center;

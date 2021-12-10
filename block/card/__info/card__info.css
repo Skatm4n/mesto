@@ -1,14 +1,12 @@
-.card__info{
-  min-height: 75px;
+.card__info {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 23px 20px;
   box-sizing: border-box;
+  transition: all 1s ease;
 }
 
-.card__info:hover{
+.card__info:hover {
   opacity: 0.8;
-  transition: all 1s ease;
 }
