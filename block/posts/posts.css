@@ -11,6 +11,7 @@
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     column-gap: 0;
+    max-width: 640px;
   }
 }
 

@@ -8,6 +8,8 @@ const nameValue = document.querySelector('.popup__form-item-name');
 const descriptionValue = document.querySelector('.popup__form-item-description');
 
 function openPopup(){
+  nameValue.value = profileName.textContent;
+  descriptionValue.value = profileDescription.textContent;
   popup.classList.add('popup_visible');
 }
 

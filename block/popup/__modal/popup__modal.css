@@ -1,5 +1,5 @@
-.popup__modal{
-  max-width: 430px;
+.popup__modal {
+  min-width: 430px;
   min-height: 330px;
   background-color: white;
   border-radius: 10px;
@@ -10,7 +10,9 @@
 }
 
 @media screen and (max-width: 756px) {
-  .popup__modal{
-    max-width: 282px;
+  .popup__modal {
+    min-width: 282px;
+    min-height: 322px;
+    padding: 25px 22px;
   }
 }

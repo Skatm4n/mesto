@@ -12,6 +12,7 @@
 
 @media screen and (max-width: 756px) {
   .avatar__name {
+    max-width: 75%;
     font-size: 27px;
     line-height: 1.22;
     text-align: center;
