@@ -7,17 +7,17 @@ const profileDescription = document.querySelector('.avatar__description');
 const nameValue = document.querySelector('.popup__form-item-name');
 const descriptionValue = document.querySelector('.popup__form-item-description');
 
-function openPopup(){
+function openPopup() {
   nameValue.value = profileName.textContent;
   descriptionValue.value = profileDescription.textContent;
   popup.classList.add('popup_visible');
 }
 
-function closePopup (){
+function closePopup() {
   popup.classList.remove('popup_visible');
 }
 
-function changeData (def){
+function changeData(def) {
   def.preventDefault();
 
   profileName.textContent = nameValue.value;
