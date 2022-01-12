@@ -3,7 +3,7 @@ const btnAddCard = document.querySelector('.profile__add-button');
 const formEditSubmit = document.querySelector('.popup__form_type_edit');
 const btnCloseEdit = document.querySelector('.popup__close-btn_type_edit');
 const btnCloseAdd = document.querySelector('.popup__close-btn_type_add');
-const fordAddSubmit = document.querySelector('.popup__form_type_add')
+const formAddSubmit = document.querySelector('.popup__form_type_add')
 const btnCloseImage = document.querySelector('.popup__close-btn_type_image');
 
 const popupEdit = document.querySelector('.popup_type_edit');
@@ -39,7 +39,7 @@ function changeDataHandler(evt) {
   closePopup(popupEdit);
 };
 
-function initialCards(arr) {
+function renderCards(arr) {
   arr.forEach((item)=> addCard(createCard(item)));
 };
 
@@ -110,7 +110,7 @@ function zoomImage(item) {
   openPopup(popupImage);
 };
 
-initialCards(contentCards);
+renderCards(contentCards);
 
 btnEditProfile.addEventListener('click', () => {
   nameValue.value = profileName.textContent;
@@ -128,7 +128,7 @@ btnCloseImage.addEventListener('click', () => closePopup(popupImage));
 
 formEditSubmit.addEventListener('submit', changeDataHandler);
 
-fordAddSubmit.addEventListener('submit', addCardHandler);
+formAddSubmit.addEventListener('submit', addCardHandler);
 
 
 
