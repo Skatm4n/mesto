@@ -17,10 +17,10 @@ const popupAlbumImageCapture = document.querySelector('.album__image-capture');
 
 const profileName = document.querySelector('.avatar__name');
 const profileDescription = document.querySelector('.avatar__description');
-const nameValue = document.querySelector('.popup__form_input_name');
-const descriptionValue = document.querySelector('.popup__form_input_description');
-const cardImageValue = document.querySelector('.popup__form_input_image-link');
-const cardTitleValue = document.querySelector('.popup__form_input_place');
+const nameValue = document.querySelector('.popup__form-item_type_name');
+const descriptionValue = document.querySelector('.popup__form-item_type_description');
+const cardImageValue = document.querySelector('.popup__form-item_type_link');
+const cardTitleValue = document.querySelector('.popup__form-item_type_place');
 
 
 const contentCards = [
