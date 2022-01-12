@@ -45,14 +45,14 @@
     </main>
 
     <footer class="footer">
-      <p class="footer__copyright">© 2021 Mesto Russia</p>
+      <p class="footer__copyright">&copy 2021 Mesto Russia</p>
     </footer>
 
     <div class="popup popup_type_edit">
       <div class="popup__modal">
         <button class="popup__close-btn popup__close-btn_type_edit " type="button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form" autocomplete="off" name="editing">
+        <form class="popup__form popup__form_type_edit" autocomplete="off" name="editing">
           <input name="name" type="text" class="popup__form-item popup__form-item_type_name" placeholder="Имя">
           <input name="description" type="text" class="popup__form-item popup__form-item_type_description" placeholder="Описание">
           <button type="submit" name="save" class="popup__form-btn popup__form-btn_type_edit-info">Сохранить</button>
@@ -64,9 +64,9 @@
       <div class="popup__modal">
         <button class="popup__close-btn popup__close-btn_type_add" type="button"></button>
         <h2 class="popup__title">Новое место</h2>
-        <form class="popup__form" autocomplete="off" name="editing">
+        <form class="popup__form popup__form_type_add" autocomplete="off" name="editing">
           <input name="name" type="text" class="popup__form-item popup__form-item_type_place" placeholder="Название">
-          <input name="description" type="text" class="popup__form-item popup__form-item_type_link" placeholder="Ссылка на картинку">
+          <input name="description" type="url" class="popup__form-item popup__form-item_type_link" placeholder="Ссылка на картинку">
           <button type="submit" name="save" class="popup__form-btn popup__form-btn_type_save-card">Создать</button>
         </form>
       </div>
@@ -93,6 +93,7 @@
     </article>
   </template>
 
+  <script src="./scripts/initial-cards.js"></script>
   <script src="./scripts/script.js"></script>
 </body>
 

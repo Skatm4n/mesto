@@ -1,4 +1,5 @@
 .posts {
+  min-height: 744px;
   margin: 0 auto 66px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
