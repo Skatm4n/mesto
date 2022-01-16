@@ -5,6 +5,7 @@ const btnCloseEdit = document.querySelector('.popup__close-btn_type_edit');
 const btnCloseAdd = document.querySelector('.popup__close-btn_type_add');
 const formAddSubmit = document.querySelector('.popup__form_type_add')
 const btnCloseImage = document.querySelector('.popup__close-btn_type_image');
+const btnSaveCard = document.querySelector('.popup__form-btn_type_save-card');
 
 const popupEdit = document.querySelector('.popup_type_edit');
 const popupAdd = document.querySelector('.popup_type_add');
@@ -24,10 +25,16 @@ const cardTitleValue = document.querySelector('.popup__form-item_type_place');
 
 function openPopup(popup) {
   popup.classList.add('popup_visible');
+
+  document.addEventListener('mousedown', closePopupByExClick);
+  document.addEventListener('keydown', closePopupByEscape);
 };
 
 function closePopup(popup) {
   popup.classList.remove('popup_visible');
+
+  document.removeEventListener('mousedown', closePopupByExClick);
+  document.removeEventListener('keydown', closePopupByEscape);
 };
 
 function changeDataHandler(evt) {
@@ -90,7 +97,10 @@ function addCardHandler(evt) {
 
   closePopup(popupAdd);
 
-  fordAddSubmit.reset();
+  formAddSubmit.reset();
+
+  btnSaveCard.classList.add('popup__form-btn_disabled');
+  btnSaveCard.setAttribute('disabled', true);
 };
 
 function deleteCard(evt) {
@@ -108,6 +118,22 @@ function zoomImage(item) {
   popupAlbumImageCapture.textContent = item.name;
 
   openPopup(popupImage);
+};
+
+function closePopupByEscape (evt) {
+  const visiblePopup = document.querySelector('.popup_visible');
+
+  if(evt.key === 'Escape') {
+    closePopup(visiblePopup);
+  }
+};
+
+function closePopupByExClick (evt) {
+  const visiblePopup = document.querySelector('.popup_visible');
+
+  if(evt.target === visiblePopup) {
+    closePopup(visiblePopup);
+  }
 };
 
 renderCards(contentCards);
