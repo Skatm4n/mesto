@@ -1,9 +1,6 @@
 const btnEditProfile = document.querySelector('.avatar__edit-button');
 const btnAddCard = document.querySelector('.profile__add-button');
 const formEditSubmit = document.querySelector('.popup__form_type_edit');
-/*const btnCloseEdit = document.querySelector('.popup__close-btn_type_edit');
-const btnCloseAdd = document.querySelector('.popup__close-btn_type_add');
-const btnCloseImage = document.querySelector('.popup__close-btn_type_image');*/
 const formAddSubmit = document.querySelector('.popup__form_type_add')
 const btnSaveCard = document.querySelector('.popup__form-btn_type_save-card');
 
@@ -26,15 +23,13 @@ const cardTitleValue = document.querySelector('.popup__form-item_type_place');
 function openPopup(popup) {
   popup.classList.add('popup_visible');
 
-  popup.addEventListener('mousedown', closePopupByExClick);
-  popup.addEventListener('keydown', closePopupByEscape);
+  document.addEventListener('keydown', closePopupByEscape);
 };
 
 function closePopup(popup) {
   popup.classList.remove('popup_visible');
 
-  popup.removeEventListener('mousedown', closePopupByExClick);
-  popup.removeEventListener('keydown', closePopupByEscape);
+  document.removeEventListener('keydown', closePopupByEscape);
 };
 
 function changeDataHandler(evt) {
@@ -125,14 +120,6 @@ function closePopupByEscape (evt) {
   }
 };
 
-function closePopupByExClick (evt) {
-  const visiblePopup = document.querySelector('.popup_visible');
-
-  if(evt.target === visiblePopup) {
-    closePopup(visiblePopup);
-  }
-};
-
 function addEventListenersForPopups() {
   const popups = document.querySelectorAll('.popup');
 
@@ -160,12 +147,6 @@ btnEditProfile.addEventListener('click', () => {
 });
 
 btnAddCard.addEventListener('click', () => openPopup(popupAdd));
-
-/*btnCloseEdit.addEventListener('click', () => closePopup(popupEdit));
-
-btnCloseAdd.addEventListener('click', () => closePopup(popupAdd));
-
-btnCloseImage.addEventListener('click', () => closePopup(popupImage));*/
 
 formEditSubmit.addEventListener('submit', changeDataHandler);
 
