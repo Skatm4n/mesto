@@ -20,6 +20,15 @@ const descriptionValue = document.querySelector('.popup__form-item_type_descript
 const cardImageValue = document.querySelector('.popup__form-item_type_link');
 const cardTitleValue = document.querySelector('.popup__form-item_type_place');
 
+const paramConfig = {
+  formElement: '.popup__form',
+  inputElement: '.popup__form-item',
+  inputError: 'popup__form-item_error',
+  error: 'popup__error_active',
+  submitButton: '.popup__form-btn',
+  submitBtnDisabled: 'popup__form-btn_disabled'
+};
+
 function openPopup(popup) {
   popup.classList.add('popup_visible');
 

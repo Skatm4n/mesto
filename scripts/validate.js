@@ -1,13 +1,13 @@
-const paramConfig = {
-  formElement: '.popup__form',
-  inputElement: '.popup__form-item',
-  inputError: 'popup__form-item_error',
-  error: 'popup__error_active',
-  submitButton: '.popup__form-btn',
-  submitBtnDisabled: 'popup__form-btn_disabled'
-};
+class FormValidation {
+  constructor(paramConfig, form) {
+    this._config = paramConfig;
+    this._form = form;
+    this._submitBTn = this._form.querySelector(this._config.submitButton);
+    this._inputList = Array.from(this._form.querySelectorAll(this._config.inputElement));
+  }
 
-const showInputError = (form, input, paramConfig, errorMessage) => {
+
+_showInputError(input, errorMessage) {
 
   const errorBlock = form.querySelector(`.${input.id}-error`);
 
@@ -16,7 +16,7 @@ const showInputError = (form, input, paramConfig, errorMessage) => {
   errorBlock.classList.add(paramConfig.error);
 };
 
-const hideInputError = (form, input, paramConfig) => {
+_hideInputError (input)  {
 
   const errorBlock = form.querySelector(`.${input.id}-error`);
 
@@ -25,39 +25,39 @@ const hideInputError = (form, input, paramConfig) => {
   errorBlock.classList.remove(paramConfig.inputError);
 };
 
-const isValid = (form, input, paramConfig) => {
-  if(!input.validity.valid) {
+_isValid  (input)  {
+  if (!input.validity.valid) {
     showInputError(form, input, paramConfig, input.validationMessage);
   } else {
     hideInputError(form, input, paramConfig);
   }
 };
 
-const disableButton = (button, paramConfig) => {
+_disableButton  ()  {
   button.setAttribute('disabled', true);
   button.classList.add(paramConfig.submitBtnDisabled);
 };
 
-const activateButton = (button, paramConfig) => {
+_activateButton  ()  {
   button.classList.remove(paramConfig.submitBtnDisabled);
   button.removeAttribute('disabled');
 };
 
-const hasInvalidInput = (inputList) => {
+_hasInvalidInput()  {
   return inputList.some(input => {
     return !input.validity.valid;
   });
 };
 
-const toggleButtonState = (inputList, button, paramConfig) => {
-  if(hasInvalidInput(inputList)) {
+_toggleButtonState()  {
+  if (hasInvalidInput(inputList)) {
     disableButton(button, paramConfig);
   } else {
     activateButton(button, paramConfig);
   }
 };
 
-const setEventListeners = (form, paramConfig) => {
+_setEventListeners()  {
   const inputList = Array.from(form.querySelectorAll(paramConfig.inputElement));
   const button = form.querySelector(paramConfig.submitButton);
 
@@ -69,7 +69,7 @@ const setEventListeners = (form, paramConfig) => {
   });
 };
 
-const enableValidation = (paramConfig) => {
+enableValidation()  {
   const formList = Array.from(document.querySelectorAll(paramConfig.formElement));
 
   formList.forEach(form => {
@@ -81,4 +81,4 @@ const enableValidation = (paramConfig) => {
   });
 };
 
-enableValidation(paramConfig);
+}
