@@ -1,3 +1,7 @@
+import {contentCards} from './initialCards.js';
+import {Card} from './Card.js';
+import {FormValidation} from './FormValidation.js';
+
 const btnEditProfile = document.querySelector('.avatar__edit-button');
 const btnAddCard = document.querySelector('.profile__add-button');
 const formEditSubmit = document.querySelector('.popup__form_type_edit');
@@ -29,6 +33,11 @@ const paramConfig = {
   submitBtnDisabled: 'popup__form-btn_disabled'
 };
 
+const addCardFormValidator = new FormValidation(paramConfig, popupAdd,);
+const editFormValidator = new FormValidation(paramConfig, popupEdit);
+addCardFormValidator.enableValidation();
+editFormValidator.enableValidation();
+
 function openPopup(popup) {
   popup.classList.add('popup_visible');
 
@@ -54,31 +63,8 @@ function renderCards(arr) {
   arr.forEach((item)=> addCard(createCard(item)));
 };
 
-function initListener(item, type, handler) {
-  if (!item) {
-    return;
-  }
-  item.addEventListener(type, handler);
-};
-
-function createCard(item) {
-
-  const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
-  const cardElementImage = cardElement.querySelector('.card__image');
-
-  cardElementImage.src = item.link;
-  cardElement.querySelector('.card__title').textContent = item.name;
-  cardElementImage.alt = item.name;
-
-  const deleteButton = cardElement.querySelector('.card__delete-btn');
-  initListener(deleteButton, 'click', deleteCard);
-
-  const likeButton = cardElement.querySelector('.card__like-btn');
-  initListener(likeButton, 'click', toggleLike);
-
-  initListener(cardElementImage, 'click', () => zoomImage(item));
-
-  return cardElement;
+function createCard(cardData) {
+  return new Card(cardData,'.card-template', zoomImage).generateCard();
 };
 
 function addCard(item) {
@@ -99,17 +85,7 @@ function addCardHandler(evt) {
 
   formAddSubmit.reset();
 
-  btnSaveCard.classList.add('popup__form-btn_disabled');
-  btnSaveCard.setAttribute('disabled', true);
-};
-
-function deleteCard(evt) {
-  evt.target.closest('.card').remove();
-};
-
-function toggleLike(evt) {
-
-  evt.target.classList.toggle('card__like-btn_active');
+  addCardFormValidator.toggleButtonState();
 };
 
 function zoomImage(item) {

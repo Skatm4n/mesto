@@ -1,4 +1,4 @@
-const contentCards = [
+export const contentCards = [
 
   {
     name: 'Байкал',

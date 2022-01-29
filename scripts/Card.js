@@ -1,5 +1,6 @@
-class Card {
+export class Card {
   constructor(cardData, cardSelector, zoomImage) {
+    this._data = cardData;
     this._title = cardData.name;
     this._image = cardData.link;
     this._selector = cardSelector;
@@ -8,10 +9,10 @@ class Card {
 
   _getTemplate() {
     const cardElement = document
-    .querySelector(this._selector)
-    .content
-    .querySelector('.card')
-    .cloneNode(true);
+      .querySelector(this._selector)
+      .content
+      .querySelector('.card')
+      .cloneNode(true);
 
     return cardElement;
   }
@@ -25,10 +26,12 @@ class Card {
   }
 
   _setEventListeners() {
-   this._element.querySelector('.card__delete-btn').addEventListener('click', () => this._deleteCard());
-   this._element.querySelector('.card__like-btn').addEventListener('click', () => this._toggleLike());
-   this._element.querySelector('.card__image') .addEventListener('click', () => this._zoom(cardData));
-
+    this._element.querySelector('.card__delete-btn')
+      .addEventListener('click', () => this._deleteCard());
+    this._element.querySelector('.card__like-btn')
+      .addEventListener('click', (evt) => this._toggleLike(evt));
+    this._element.querySelector('.card__image')
+      .addEventListener('click', () => this._zoom(this._data));
   }
 
   generateCard() {
