@@ -1,8 +1,6 @@
 export class Card {
   constructor(cardData, cardSelector, zoomImage) {
     this._data = cardData;
-    this._title = cardData.name;
-    this._image = cardData.link;
     this._selector = cardSelector;
     this._zoom = zoomImage;
   }
@@ -38,10 +36,10 @@ export class Card {
     this._element = this._getTemplate();
 
     const cardImage = this._element.querySelector('.card__image');
-    cardImage.src = this._image;
-    cardImage.alt = this._title;
+    cardImage.src = this._data.link;
+    cardImage.alt = this._data.name;
 
-    this._element.querySelector('.card__title').textContent = this._title;
+    this._element.querySelector('.card__title').textContent = this._data.name;
 
     this._setEventListeners();
 

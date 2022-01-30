@@ -1,18 +1,18 @@
-import {contentCards} from './initialCards.js';
-import {Card} from './Card.js';
-import {FormValidation} from './FormValidation.js';
+import { contentCards } from './initialCards.js';
+import { Card } from './Card.js';
+import { FormValidation } from './FormValidation.js';
 
 const btnEditProfile = document.querySelector('.avatar__edit-button');
 const btnAddCard = document.querySelector('.profile__add-button');
 const formEditSubmit = document.querySelector('.popup__form_type_edit');
 const formAddSubmit = document.querySelector('.popup__form_type_add')
-const btnSaveCard = document.querySelector('.popup__form-btn_type_save-card');
+
 
 const popupEdit = document.querySelector('.popup_type_edit');
 const popupAdd = document.querySelector('.popup_type_add');
 const popupImage = document.querySelector('.popup_type_image');
 
-const cardTemplate = document.querySelector('.card-template').content;
+
 const cardSection = document.querySelector('.posts');
 const popupAlbumImage = document.querySelector('.album__image');
 const popupAlbumImageCapture = document.querySelector('.album__image-capture');
@@ -60,11 +60,11 @@ function changeDataHandler(evt) {
 };
 
 function renderCards(arr) {
-  arr.forEach((item)=> addCard(createCard(item)));
+  arr.forEach((item) => addCard(createCard(item)));
 };
 
 function createCard(cardData) {
-  return new Card(cardData,'.card-template', zoomImage).generateCard();
+  return new Card(cardData, '.card-template', zoomImage).generateCard();
 };
 
 function addCard(item) {
@@ -96,9 +96,9 @@ function zoomImage(item) {
   openPopup(popupImage);
 };
 
-function closePopupByEscape (evt) {
+function closePopupByEscape(evt) {
 
-  if(evt.key === 'Escape') {
+  if (evt.key === 'Escape') {
     const visiblePopup = document.querySelector('.popup_visible');
 
     closePopup(visiblePopup);
@@ -110,11 +110,11 @@ function addEventListenersForPopups() {
 
   popups.forEach(popup => {
     popup.addEventListener('click', (evt) => {
-      if(evt.target.classList.contains('popup_visible')) {
+      if (evt.target.classList.contains('popup_visible')) {
         closePopup(popup);
       }
 
-      if(evt.target.classList.contains('popup__close-btn')) {
+      if (evt.target.classList.contains('popup__close-btn')) {
         closePopup(popup);
       }
     });
