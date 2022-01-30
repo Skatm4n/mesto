@@ -38,6 +38,9 @@ const editFormValidator = new FormValidation(paramConfig, popupEdit);
 addCardFormValidator.enableValidation();
 editFormValidator.enableValidation();
 
+nameValue.value = profileName.textContent;
+descriptionValue.value = profileDescription.textContent;
+
 function openPopup(popup) {
   popup.classList.add('popup_visible');
 
@@ -110,13 +113,9 @@ function addEventListenersForPopups() {
 
   popups.forEach(popup => {
     popup.addEventListener('click', (evt) => {
-      if (evt.target.classList.contains('popup_visible')) {
+      if (evt.target.classList.contains('popup_visible') || evt.target.classList.contains('popup__close-btn')) {
         closePopup(popup);
-      }
-
-      if (evt.target.classList.contains('popup__close-btn')) {
-        closePopup(popup);
-      }
+      } // мдааа, совсем сглупил..
     });
   });
 };
@@ -125,11 +124,7 @@ addEventListenersForPopups();
 
 renderCards(contentCards);
 
-btnEditProfile.addEventListener('click', () => {
-  nameValue.value = profileName.textContent;
-  descriptionValue.value = profileDescription.textContent;
-  openPopup(popupEdit)
-});
+btnEditProfile.addEventListener('click', () => openPopup(popupEdit));
 
 btnAddCard.addEventListener('click', () => openPopup(popupAdd));
 
