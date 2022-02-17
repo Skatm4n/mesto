@@ -84,11 +84,13 @@ btnEditProfile.addEventListener('click', () => {
   formEditPopup.open();
   setInitialUserInfo();
   editFormValidator.toggleButtonState();
+  editFormValidator.resetInputFields();
 });
 
 btnAddCard.addEventListener('click', () => {
   addCardFormPopup.open();
   addCardFormValidator.toggleButtonState();
+  addCardFormValidator.resetInputFields();
 })
 
 

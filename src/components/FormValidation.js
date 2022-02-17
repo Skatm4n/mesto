@@ -59,6 +59,12 @@ export default class FormValidation {
     });
   };
 
+  resetInputFields() {
+    this._inputList.forEach(input => {
+      this._hideInputError(input);
+    })
+  }
+
   enableValidation() {
     this._setEventListeners();
   };
