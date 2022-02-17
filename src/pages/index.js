@@ -1,3 +1,10 @@
+import './index.css';
+import Card from '../components/Card.js';
+import FormValidation from '../components/FormValidation.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import Section from '../components/Section.js';
+import UserInfo from '../components/UserInfo.js';
 import {
   contentCards,
   popupImage,
@@ -16,12 +23,6 @@ import {
   popupAddSelector,
   btnAddCard
 } from '../utils/constants.js';
-import Card from '../components/Card.js';
-import FormValidation from '../components/FormValidation.js';
-import PopupWithImage from '../components/PopupWithImage.js';
-import PopupWithForm from '../components/PopupWithForm.js';
-import Section from '../components/Section.js';
-import UserInfo from '../components/UserInfo.js';
 
 const userInfo = new UserInfo(profileNameSelector, profileDescriptionSelector);
 
