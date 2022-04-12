@@ -24,7 +24,9 @@
 
         <div class="avatar">
 
+          <div class="avatar__image-edit">
           <img src="<%=require('./images/profile__avatar.jpg')%>" alt="аватарка пользователя" class="avatar__image">
+          </div>
 
           <div class="avatar__info">
 
@@ -55,11 +57,11 @@
           <input name="name" type="text" id="name-input" class="popup__form-item popup__form-item_type_name"
             placeholder="Имя" required minlength="2" maxlength="40">
           <span class="popup__error name-input-error"></span>
-          <input name="description" type="text" id="description-input"
+          <input name="about" type="text" id="description-input"
             class="popup__form-item popup__form-item_type_description" placeholder="Описание" required minlength="2"
             maxlength="200">
           <span class="popup__error description-input-error"></span>
-          <button type="submit" name="save" class="popup__form-btn popup__form-btn_type_edit-info">Сохранить</button>
+          <button type="submit" name="save" class="popup__form-btn popup__form-btn_type_save">Сохранить</button>
         </form>
       </div>
     </div>
@@ -76,7 +78,7 @@
             placeholder="Ссылка на картинку" required>
           <span class="popup__error image-url-input-error"></span>
           <button type="submit" name="save"
-            class="popup__form-btn popup__form-btn_type_save-card popup__form-btn_disabled" disabled>Создать</button>
+            class="popup__form-btn popup__form-btn_type_save popup__form-btn_disabled" disabled>Создать</button>
         </form>
       </div>
     </div>
@@ -89,6 +91,31 @@
       </figure>
     </div>
 
+    <div class="popup popup_type_submit-deleting">
+      <div class="popup__modal popup__modal_type_deleting">
+        <button class="popup__close-btn popup__close-btn_type_delete" type="button"></button>
+        <h2 class="popup__title">Вы уверены?</h2>
+        <form class="popup__form popup__form_type_delete">
+        <button type="submit" name="save" class="popup__form-btn">Да</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_type_edit-avatar">
+      <div class="popup__modal popup__modal_type_edit-avatar">
+        <button class="popup__close-btn popup__close-btn_type_delete" type="button"></button>
+        <h2 class="popup__title">Обновить аватар</h2>
+        <form class="popup__form popup__form_type_delete">
+          <input name="avatar" type="url" id="avatar-url-input" class="popup__form-item popup__form-item_type_avatar"
+            placeholder="Ссылка на картинку" required>
+          <span class="popup__error avatar-url-input-error"></span>
+        <button type="submit" name="save" class="popup__form-btn popup__form-btn_type_save">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+
+
   </div>
 
   <template class="card-template">
@@ -96,7 +123,10 @@
       <img src="#" alt="" class="card__image">
       <div class="card__info">
         <h2 class="card__title"></h2>
+        <div class="card__like">
         <button name="like" type="button" class="card__like-btn"></button>
+        <p class="card__like-count">0</p>
+        </div>
       </div>
       <button name="delete" type="button" class="card__delete-btn"></button>
     </article>
