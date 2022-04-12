@@ -96,7 +96,7 @@ function editUserInfo(data) {
   api.editUserInfo(data)
     .then(data => {
       userInfo.setUserInfo(data);
-      formEditPopup.closePopup();
+      formEditPopup.close();
     })
     .catch((err) => {
       console.log(err);
@@ -111,7 +111,7 @@ function editAvatar(data) {
   api.editAvatar(data)
     .then(data => {
       userInfo.setUserInfo(data);
-      avatarEditPopup.closePopup()
+      avatarEditPopup.close()
     })
     .catch((err) => {
       console.log(err);
